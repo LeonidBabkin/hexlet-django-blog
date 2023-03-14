@@ -19,5 +19,6 @@ from django.urls import path
 
 urlpatterns = [
     path('', views.index), # <правило,назначает обработчиком главной страницы или пустого пути вьюху views.index.
+    path('about/', views.about),
     path('admin/', admin.site.urls),
 ]
