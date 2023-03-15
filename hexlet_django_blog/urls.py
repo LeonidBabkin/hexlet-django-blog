@@ -21,5 +21,7 @@ urlpatterns = [
     path('', views.index),  # <правило,назначает обработчиком главной страницы или пустого пути вьюху views.index.
     path('about/', views.about),
     path('article/', include('hexlet_django_blog.article.urls')),  # <- новая строчка
+    path('articles/', include('hexlet_django_blog.articles.urls')),
+    path('categories/', include('hexlet_django_blog.categories.urls')),
     path('admin/', admin.site.urls),
 ]
