@@ -1,5 +1,5 @@
 from django.urls import path
-from simple_blog.articles import views
+from hexlet_django_blog.articles import views
 
 
 urlpatterns = [
