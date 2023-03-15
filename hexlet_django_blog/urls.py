@@ -18,7 +18,8 @@ from django.contrib import admin
 from django.urls import path
 
 urlpatterns = [
-    path('', views.index), # <правило,назначает обработчиком главной страницы или пустого пути вьюху views.index.
+    path('', views.index),  # <правило,назначает обработчиком главной страницы или пустого пути вьюху views.index.
     path('about/', views.about),
+    path('article/', include('hexlet_django_blog.article.urls')),  # <- новая строчка
     path('admin/', admin.site.urls),
 ]
