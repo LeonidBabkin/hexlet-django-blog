@@ -7,8 +7,10 @@ readme = "README.md"
 packages = [{include = "hexlet_django_blog"}]
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.10"
 django = "^4.1.7"
+django-bootstrap4 = "^22.3"
+tzdata = "^2022.7"
 
 
 [build-system]
