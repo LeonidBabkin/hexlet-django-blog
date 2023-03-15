@@ -15,7 +15,7 @@ Including another URLconf
 """
 from hexlet_django_blog import views
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 urlpatterns = [
     path('', views.index),  # <правило,назначает обработчиком главной страницы или пустого пути вьюху views.index.
