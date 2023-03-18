@@ -19,6 +19,7 @@ def about(request):
         request,
         'about.html',
         context={'tags': tags},
+    )
 
 
 def details(request):
