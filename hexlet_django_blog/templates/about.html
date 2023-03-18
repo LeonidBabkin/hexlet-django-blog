@@ -12,10 +12,9 @@
   <body class="bg-light">
     <div class="container mt-4">
       <h1>О блоге</h1>
-      <p>Список доступных статей</p>
-      {% for member in TEAM %}
-      <p>The article {{ member.name }} by {{ member.author }}</p>
-      <a href="{{ member.link }}">{{ member.name }}</a>
+      <p>Список доступных статей:</p>
+      {% for article in TEAM %}
+      <p>The {{ article.name }} article written by {{ article.author }}<a href="{{ article.link }}">Link</a></p>      
       {% endfor %}
     </div>
   </body>
