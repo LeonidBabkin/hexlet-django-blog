@@ -11,8 +11,8 @@
   </head>
   <body class="bg-light">
     <div class="container mt-4">
-      <h1>О блоге</h1>
-      <p>Список доступных статей:</p>
+      <h1>Уточнения</h1>
+      <p>Уточнения по статьям - ссылки на особо интересные:</p>
       {% for article in ARTICLES %}
       <p>The {{ article.name }} article written by {{ article.author }} <a href="{{ article.link }}">Link</a></p>      
       {% endfor %}
