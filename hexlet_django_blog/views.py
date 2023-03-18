@@ -1,5 +1,6 @@
 from django.shortcuts import render
 
+
 ARTICLES = [
     {'name': 'death-metal-bats', 'author': 'Elizabeth Rayne', 'link': 'https://www.livescience.com/death-metal-bats'},
     {'name': 'mind-controlled-wolves-toxoplasma-gondii', 'author': 'Joshua A. Krisch ', 'link': 'https://www.livescience.com/mind-controlled-wolves-toxoplasma-gondii'},
@@ -26,3 +27,5 @@ def details(request):
         'details.html',
         context={'ARTICLES': ARTICLES},
     )
+        
+    
