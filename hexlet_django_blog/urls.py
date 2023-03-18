@@ -20,6 +20,7 @@ from django.urls import path, include
 urlpatterns = [
     path('', views.index),  # <правило,назначает обработчиком главной страницы или пустого пути вьюху views.index.
     path('about/', views.about),
+    path('details/', views.details),
     path('article/', include('hexlet_django_blog.article.urls')),  # <- новая строчка
     path('articles/', include('hexlet_django_blog.articles.urls')),
     path('categories/', include('hexlet_django_blog.categories.urls')),
