@@ -12,7 +12,10 @@
   <body class="bg-light">
     <div class="container mt-4">
       <h1>О блоге</h1>
-      <p>Эксперименты с Django на Хекслете</p>
+      <p>Список доступных статей</p>
+      {% for member in TEAM %}
+      <p>This is article {{ member.name }}{{ member.author }}{{ member.link }}</p>
+      {% endfor %}
     </div>
   </body>
 </html>
