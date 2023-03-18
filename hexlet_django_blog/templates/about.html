@@ -14,7 +14,8 @@
       <h1>О блоге</h1>
       <p>Список доступных статей</p>
       {% for member in TEAM %}
-      <p>This is article {{ member.name }}{{ member.author }}{{ member.link }}</p>
+      <p>The article {{ member.name }} by {{ member.author }}</p>
+      <a href="{{ member.link }}">{{ member.name }}</a>
       {% endfor %}
     </div>
   </body>
