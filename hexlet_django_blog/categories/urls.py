@@ -3,5 +3,5 @@ from hexlet_django_blog.categories import views
 
 
 urlpatterns = [
-    path('', views.categories),
+    path('', views.categories,name='app-views-categories'),
 ]
