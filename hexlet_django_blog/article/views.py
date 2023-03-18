@@ -1,6 +1,4 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-
 
 def index(request):
-    return HttpResponse('Некоторая статья')
+    return render(request, 'article/templates/index.html', context={'title': 'Некоторая статья')
