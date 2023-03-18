@@ -11,9 +11,18 @@ ARTICLES = [
 def index(request):
     return render(request, 'index.html')
 
+
 def about(request):
+    tags = ['обучение', 'программирование', 'python', 'oop']
     return render(
         request,
         'about.html',
+        context={'tags': tags},
+
+
+def details(request):
+    return render(
+        request,
+        'details.html',
         context={'ARTICLES': ARTICLES},
     )
