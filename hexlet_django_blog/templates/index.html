@@ -1,39 +1,28 @@
 {% block navigation %}
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="/">Джанго Блог</a>
+    <a class="navbar-brand" href="/">Содержание блога</a>
     
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-
         <li class="nav-item">
-        <!-- BEGIN (write your solution here) -->
         <a class="nav-link" href="{% url 'app-views-about' %}">О блоге</a>
-        <!-- END -->
         </li>
 
         <li class="nav-item">
-        <!-- BEGIN (write your solution here) -->
         <a class="nav-link" href="{% url 'app-views-article' %}">О статье</a>
-        <!-- END -->
-        <li>
+        </li>
             
         <li class="nav-item">
-        <!-- BEGIN (write your solution here) -->
         <a class="nav-link" href="{% url 'app-views-articles' %}">О статьях</a>
-        <!-- END -->
-        <li>
+        </li>
                    
         <li class="nav-item">
-        <!-- BEGIN (write your solution here) -->
         <a class="nav-link" href="{% url 'app-views-categories' %}">О категориях</a>
-        <!-- END -->
-        <li>
+        </li>
                        
         <li class="nav-item">
-        <!-- BEGIN (write your solution here) -->
         <a class="nav-link" href="{% url 'app-views-details' %}">Уточнения</a>
-        <!-- END -->
-        <li>
+        </li>
     </ul>
     </div>
 </nav>
