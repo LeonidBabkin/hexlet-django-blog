@@ -9,6 +9,11 @@
     <title>Django simple blog</title>
     {% bootstrap_css %}
   </head>
+  <div id="sidebar">
+    {% block sidebar %}
+      <a href="{% url 'index' %}">Назад к главной странице</a>
+    {% endblock %}
+  </div>
   <body class="bg-light">
     <div class="container mt-4">
       <h1>Уточнения</h1>
@@ -16,13 +21,6 @@
       {% for article in ARTICLES %}
       <p>The {{ article.name }} article written by {{ article.author }} <a href="{{ article.link }}">Link</a></p>      
       {% endfor %}
-    </div>
-    <div id="sidebar">
-    {% block sidebar %}
-        <ul>
-            <li><a href="{% url 'index' %}">Назад к главной странице</a></li>
-        </ul>
-    {% endblock %}
     </div>
   </body>
 </html>
