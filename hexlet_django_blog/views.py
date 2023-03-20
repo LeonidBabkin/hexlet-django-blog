@@ -27,9 +27,16 @@ def about(request):
     )
 
 
-def details(request):
-    return render(
-        request,
-        'details.html',
-        context={'ARTICLES': ARTICLES},
-    )
+# def details(request):
+#     return render(
+#         request,
+#         'details.html',
+#         context={'ARTICLES': ARTICLES},
+#     )
+
+class DetailsView(TemplateView):
+    template_name = "details.html"
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context={'ARTICLES': ARTICLES}
+        return context
