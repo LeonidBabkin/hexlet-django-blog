@@ -1,11 +1,7 @@
-{% extends "base.html" %}
-
-{% block title %}Эксперименты с Django на Хекслете - Статьи{% endblock %}
+<h1>{{ title }}</h1>
 <div id="sidebar">
     {% block sidebar %}
-        <ul>
-            <li><a href="{% url 'index' %}">Назад к главной странице</a></li>
-        </ul>
+      <li><a href="{% url 'index' %}">Назад к главной странице</a></li>
     {% endblock %}
-    </div>
-<h1>{{ title }}</h1>
+</div>
+
