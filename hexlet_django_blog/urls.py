@@ -14,11 +14,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from hexlet_django_blog import views
+from hexlet_django_blog.views import IndexView
 from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('', views.index),  # <правило,назначает обработчиком главной страницы или пустого пути вьюху views.index.
+    path('', IndexView.as_view(), name='index'),  # <правило,назначает обработчиком главной страницы или пустого пути вьюху views.index.
     path('about/', views.about, name='app-views-about'),
     path('details/', views.details, name='app-views-details'),
     path('article/', include('hexlet_django_blog.article.urls')),
