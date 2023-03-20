@@ -11,10 +11,8 @@
 <body>
 <div id="sidebar">
     {% block sidebar %}
-        <ul>
-            <li><a href="{% url 'index' %}">Назад к главной странице</a></li>
-            <li><a href="{% url 'details-view' %}">Особенно интересные статьи</a></li>
-        </ul>
+      <a href="{% url 'index' %}">Назад к главной странице</a>
+      <a href="{% url 'details-view' %}">Особенно интересные статьи</a>
     {% endblock %}
 </div>
 <div id="content">
