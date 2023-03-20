@@ -1,8 +1,9 @@
 <!-- hexlet_django_blog/templates/about.html -->
-
-{% extends "base.html" %}
-
-{% block title %}Эксперименты с Django на Хекслете{% endblock %}
+<div id="sidebar">
+    {% block sidebar %}
+      <a href="{% url 'index' %}">Назад к главной странице</a>
+    {% endblock %}
+</div>
 
 {% block content %}
     <h1>О блоге</h1>
