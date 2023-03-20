@@ -19,7 +19,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('', IndexView.as_view()),  #
+    path('', IndexView.as_view(), name='index'),  #  name='index' можно и не вставлять в path, поскольку нигде тэг url не использует название index  в качестве ссылки
     path('about/', views.about, name='app-views-about'),
     path('details/', views.details, name='app-views-details'),
     path('article/', include('hexlet_django_blog.article.urls')),
