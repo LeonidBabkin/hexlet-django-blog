@@ -3,5 +3,5 @@ from hexlet_django_blog.article import views
 
 
 urlpatterns = [
-    path('', views.index, name='app-views-article'),
+    path('article/', ArticleIndexView.as_view(), name='article-index-view'),
 ]
