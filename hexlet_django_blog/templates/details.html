@@ -17,5 +17,12 @@
       <p>The {{ article.name }} article written by {{ article.author }} <a href="{{ article.link }}">Link</a></p>      
       {% endfor %}
     </div>
+    <div id="sidebar">
+    {% block sidebar %}
+        <ul>
+            <li><a href="{% url 'index' %}">Назад к главной странице</a></li>
+        </ul>
+    {% endblock %}
+    </div>
   </body>
 </html>
