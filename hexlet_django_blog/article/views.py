@@ -6,4 +6,4 @@ class ArticleIndexView(View):
     template_name = "article/index.html"
 
     def get(self, request, *args, **kwargs):
-        return render(request, context={'title': 'Некоторая статья'})
+        return render(request, self.template_name, context={'title': 'Некоторая статья'})
