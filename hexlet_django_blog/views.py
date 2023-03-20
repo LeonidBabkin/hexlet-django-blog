@@ -8,6 +8,9 @@ ARTICLES = [
     {'name': 'longest-living-animals', 'author': 'Patrick Pester', 'link': 'https://www.livescience.com/longest-living-animals.html'},
 ]
 
+#  Переделайте hexlet_django_blog.views.index с использованием TemplateView. View должна наследовать этот класс,
+#  а не быть заменена на TemplateView.as_view(…)
+
 class IndexView(TemplateView):
     template_name = "index.html"
     def get_context_data(self, **kwargs):
@@ -30,5 +33,3 @@ def details(request):
         'details.html',
         context={'ARTICLES': ARTICLES},
     )
-        
-    
