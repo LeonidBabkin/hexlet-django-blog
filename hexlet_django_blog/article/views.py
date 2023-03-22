@@ -12,5 +12,5 @@ from django.urls import reverse
 #         return render(request, self.template_name, context={'title': 'Некоторая статья'})
 def index(request, tags, article_id):
     template_name = "article/index.html"
-    redirect_url = reverse('article', args=(article_id, tags)
+    redirect_url = reverse('article', args=(article_id, tags))
     return HttpResponseRedirect(redirect_url)
