@@ -14,4 +14,4 @@ from django.urls import reverse
 def index(request, tags: str, article_id: int):
     template_name = "article/index.html"
     redirect_url = reverse('article', args=(article_id, tags))
-    return redirect(redirect_url, template_name, context=('article_id':article_id, 'tags':tags))
+    return redirect(redirect_url, template_name, context={'article_id': article_id, 'tags': tags})
