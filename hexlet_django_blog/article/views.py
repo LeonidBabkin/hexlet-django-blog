@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views import View
 from django.http import HttpResponse, HttpResponseRedirect
+from django.shortcuts import redirect
 from django.urls import reverse
 
 
@@ -13,4 +14,4 @@ from django.urls import reverse
 def index(request, tags: str, article_id: int):
     template_name = "article/index.html"
     redirect_url = reverse('article', args=(article_id, tags))
-    return HttpResponseRedirect(redirect_url, template_name, context=('article_id':article_id, 'tags':tags))
+    return redirect(redirect_url, template_name, context=('article_id':article_id, 'tags':tags))
