@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views import View
+from django.http import HttpResponse
 
 #  Переделайте hexlet_django_blog.article.views.index в класс-потомок от View. В дальнейшем мы будем расширять этот класс
 # class ArticleIndexView(View):
@@ -7,6 +8,6 @@ from django.views import View
 
 #     def get(self, request, *args, **kwargs):
 #         return render(request, self.template_name, context={'title': 'Некоторая статья'})
-def index(request):
+def index(request, tags, article_id):
     template_name = "article/index.html"
-    return render(request, template_name, 
+    return HttpResponse(f'Статья номер {article_id}. Тег {tags}')
