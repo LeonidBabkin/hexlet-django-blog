@@ -3,4 +3,11 @@ start:
 lint:
 	poetry run flake8 hexlet_django_blog
 
-.PHONY: start, lint
+makemigrations:
+	poetry run python3 manage.py makemigrations
+
+migrate:
+	poetry run python3 manage.py migrate
+
+.PHONY: start, lint, makemigrations
+
