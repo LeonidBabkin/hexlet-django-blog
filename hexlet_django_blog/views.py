@@ -12,7 +12,6 @@ ARTICLES = [
 #  а не быть заменена на TemplateView.as_view(…)
 
 class IndexView(TemplateView):
-    return redirect(
     template_name = "index.html"
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
