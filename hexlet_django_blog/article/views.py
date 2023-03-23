@@ -12,7 +12,7 @@ from django.http import HttpResponse
 #         return render(request, self.template_name, context={'title': 'Некоторая статья'})
 
 
-def index(request, tags: str, article_id: int):
+def index(request, tags=None, article_id=None):
     template_name = "article/index.html"
 #     reversed_url = reverse('article', kwargs=('article_id'=42, 'tags'='python'))
     return render(request, template_name, context={'article_id': article_id, 'tags': tags})
