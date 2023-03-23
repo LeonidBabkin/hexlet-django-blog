@@ -1,7 +1,8 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from django.views.generic.base import TemplateView
+# from django.shortcuts import redirect
 # from django.http import HttpResponseRedirect
-from django.urls import reverse
+# from django.urls import reverse
 
 
 ARTICLES = [
@@ -15,14 +16,16 @@ ARTICLES = [
 #  а не быть заменена на TemplateView.as_view(…)
 
 class IndexView(TemplateView):
-    def get(self, request):
-        return redirect(reverse('article', kwargs={'tags':'python', 'article_id':42}))
-
-#     template_name = "index.html"
-#     def get_context_data(self, **kwargs):
-#         context = super().get_context_data(**kwargs)
-#         context['who'] = 'World'
-#         return context
+#  Сделайте так, чтобы открытие "домашней страницы" делало перенаправление на /article/python/42. 
+#  Для этого используйте django.shortcuts.redirect и django.urls.reverse. Не задавайте URL напрямую, используйте обратный 
+#  маршрут
+#     def get(self, request):
+#         return redirect(reverse('article', kwargs={'tags':'python', 'article_id':42}))
+    template_name = "index.html"
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['who'] = 'World'
+        return context
 
 def about(request):
     tags = ['обучение', 'программирование', 'python', 'oop']
