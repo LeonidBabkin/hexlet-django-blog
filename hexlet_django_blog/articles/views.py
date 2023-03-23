@@ -3,7 +3,7 @@ from django.http import Http404
 from django.views.decorators.http import require_http_methods
 
 
-articles = [
+articles_list = [
     {'id': 1, 'title': '"How to foo?"', 'author': 'F. BarBaz'},
     {'id': 2, 'title': '"Force 101"', 'author': 'O-W. Kenobi'},
     {'id': 3, 'title': '"Top 10 skyscrapers"', 'author': 'K. Kong'},
@@ -17,7 +17,7 @@ def articles(request):
 
 @require_http_methods(['GET'])
 def article_id(request, id):
-    for article in articles:
+    for article in articles_list:
         if article['id'] == id:
             return render(request, 'articles/article.html', context={'article': article})
     raise Http404()
