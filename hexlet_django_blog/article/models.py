@@ -8,7 +8,7 @@ class Article(models.Model):
   
   
   def get_absolute_urls(self,):
-      
+      return reverse('article', args=[self.pk])
     
 
  
