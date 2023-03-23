@@ -20,4 +20,4 @@ def article_id(request, id):
     for article in articles_list:
         if article['id'] == id:
             return render(request, 'articles.html', context={'article': article})
-    raise Http404()
+    raise Http404
