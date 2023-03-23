@@ -14,7 +14,7 @@ ARTICLES = [
 #  Переделайте hexlet_django_blog.views.index с использованием TemplateView. View должна наследовать этот класс,
 #  а не быть заменена на TemplateView.as_view(…)
 
-class IndexView(TemplateView):
+class IndexView(TemplateView, tags, article_id):
     def get(self, request, tags, article_id):
         return redirect(reverse('article', tags='python', article_id=42))
 
