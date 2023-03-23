@@ -14,5 +14,5 @@ from django.http import HttpResponse
 
 def index(request, tags: str, article_id: int):
     template_name = "article/index.html"
-#     reversed_url = reverse('article', args=(article_id, tags))
+#     reversed_url = reverse('article', kwargs=('article_id'=42, 'tags'='python'))
     return render(request, template_name, context={'article_id': article_id, 'tags': tags})
