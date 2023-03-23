@@ -16,7 +16,7 @@ ARTICLES = [
 
 class IndexView(TemplateView):
     def get(self, request):
-        return redirect('article', tags='python', article_id=42)
+        return redirect(reverse('article', kwargs={'tags'='python', 'article_id'=42}))
 
 #     template_name = "index.html"
 #     def get_context_data(self, **kwargs):
