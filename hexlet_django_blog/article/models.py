@@ -7,9 +7,9 @@ class Article(models.Model):
     body = models.TextField() # тело статьи
     timestamp = models.DateTimeField(auto_now_add=True)
   
-  
-  def get_absolute_urls(self,):
-      return reverse('article', args=[self.pk])
+
+def get_absolute_urls(self,):
+    return reverse('article', args=[self.pk])
     
 
  
