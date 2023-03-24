@@ -9,5 +9,8 @@ makemigrations:
 migrate:
 	poetry run python3 manage.py migrate
 
-.PHONY: start, lint, makemigrations
+shell:
+	poetry run python3 manage.py shell
+
+PHONY: start, lint, makemigrations, shell
 
