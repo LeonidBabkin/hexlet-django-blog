@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import Http404
 from django.views.decorators.http import require_http_methods
 from hexlet_django_blog.article.models import Article
+from django.views import View
 
 articles_list = [
     {'id': 1, 'title': '"How to foo?"', 'author': 'F. BarBaz'},
