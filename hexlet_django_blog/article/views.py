@@ -6,7 +6,8 @@ from hexlet_django_blog.article.models import Article
 #  Переделайте hexlet_django_blog.article.views.index в класс-потомок от View. 
 #  В дальнейшем мы будем расширять этот класс
 class ArticleIndexView(View):
-    template_name = "article/index.html"
+    template_name = articles/index.html 
+#     template_name = "article/index.html"
 
     def get(self, request, *args, **kwargs):
         articles = Article.objects.all()[:15]  # Первой строкой из базы извлекаются 15 первых статей. Django автоматически определяет наличие размера списка в запросе и выполняет правильное смещение в SQL.
