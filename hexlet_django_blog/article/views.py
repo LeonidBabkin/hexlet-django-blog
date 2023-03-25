@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views import View
 from django.http import HttpResponse
 from hexlet_django_blog.article.models import Article
@@ -9,9 +9,9 @@ class ArticleIndexView(View):
     template_name = "article/index.html"
 
     def get(self, request, *args, **kwargs):
-        articles = Article.objects.all()[:15]  # Первой строкой из базы извлекаются 15 первых статей. Django автоматически определяет наличие размера списка в запросе и выполняет правильное смещение в SQL.
+        article = get_object_or_404(Article, id=kwargs['id'])
         return render(request, self.template_name, context={
-            'articles': articles,
+            'article': article,
         })
 
 
