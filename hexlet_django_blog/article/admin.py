@@ -21,4 +21,4 @@ from django.contrib.admin import DateFieldListFilter
 class ArticleAdmin(admin.ModelAdmin):  
         list_display = ('name', 'timestamp') # Перечисляем поля, отображаемые в таблице списка статей
         search_fields = ['name', 'body']
-        list_filter = (('timestamp', DateFieldListFilter),) # Перечисляем поля для фильтрации
+        list_filter = (('created_at', DateFieldListFilter),) # Перечисляем поля для фильтрации
