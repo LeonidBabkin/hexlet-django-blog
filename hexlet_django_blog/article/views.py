@@ -6,7 +6,7 @@ from hexlet_django_blog.article.models import Article
 #  Переделайте hexlet_django_blog.article.views.index в класс-потомок от View. 
 #  В дальнейшем мы будем расширять этот класс
 class ArticleIndexView(View):
-    template_name = articles/index.html 
+    template_name = 'articles/index.html'
 #     template_name = "article/index.html"
 
     def get(self, request, *args, **kwargs):
