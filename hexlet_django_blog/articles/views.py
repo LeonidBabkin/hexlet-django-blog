@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import Http404
 from django.views.decorators.http import require_http_methods
+from hexlet_django_blog.article.views import ArticleIndexView
 
 
 articles_list = [
@@ -12,7 +13,7 @@ articles_list = [
 ]
 # Create your views here.
 def articles(request):
-    return render(request, 'articles.html')
+    return redirect(ArticleIndexView)
 
 
 @require_http_methods(['GET'])
