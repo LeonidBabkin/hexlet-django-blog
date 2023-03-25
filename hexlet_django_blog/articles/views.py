@@ -1,8 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import Http404
 from django.views.decorators.http import require_http_methods
-from hexlet_django_blog.article.views import ArticleIndexView
-
+from hexlet_django_blog.article.models import Article
 
 articles_list = [
     {'id': 1, 'title': '"How to foo?"', 'author': 'F. BarBaz'},
@@ -12,8 +11,19 @@ articles_list = [
     {'id': 5, 'title': '"5 min recepies"', 'author': 'H. Lector'},
 ]
 # Create your views here.
-def articles(request):
-    return redirect('article-index-view')
+
+
+#  Переделайте hexlet_django_blog.article.views.index в класс-потомок от View. 
+#  В дальнейшем мы будем расширять этот класс
+class IndexView(View):
+    template_name = 'articles/index.html'
+
+    def get(self, request, *args, **kwargs):
+        articles = Article.objects.all()[:15]  # Первой строкой из базы извлекаются 15 первых статей. Django автоматически определяет наличие размера списка в запросе и выполняет правильное смещение в SQL.
+        return render(request, self.template_name, context={
+            'articles': articles,
+        })
+
 
 
 @require_http_methods(['GET'])
