@@ -16,7 +16,7 @@ class ArticleIdView(View):
 
 
 class ArticleFirstView(View):
-    template_name = "index.html"
+    template_name = "article.html"
     def get(self, request, *args, **kwargs):
         article = Article.objects.first()
         return render(request, self.template_name, context={
