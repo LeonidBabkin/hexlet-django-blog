@@ -1,9 +1,9 @@
 <div id="sidebar">
     {% block sidebar %}
+    <h>{{ article.name}} - {{ article.body }}</h>
       <a href="{% url 'index' %}">Назад к главной странице</a>
     {% endblock %}
 </div>
 
-<h1>{{ title }}</h1>
 <!-- <h>Статья номер {{ article_id }}. Тег {{ tags }}</h>
  -->
