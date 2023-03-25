@@ -13,7 +13,7 @@ articles_list = [
 ]
 # Create your views here.
 def articles(request):
-    return redirect(ArticleIndexView.as_view())
+    return redirect('article-index-view')
 
 
 @require_http_methods(['GET'])
