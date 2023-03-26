@@ -1,6 +1,6 @@
 from django.shortcuts import get_object_or_404, render
 from django.views import View
-from hexlet-django-blog.articles.models import Article
+from hexlet_django_blog.articles.models import Article
 
 
 class IndexView(View):
