@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+{% load bootstrap4 i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+
+{% block content %}
+  <div class="container mt-4">
+    <h1>{{ article.title }}</h1>
+    <div>{{ article.body }}</div>
+    <!-- BEGIN (write your solution here) -->
+    <p>Категории:
+      <a href="{% url 'categories_detail' article.category.id %}">
+        {{ article.category }}
+      </a>
+    </p>
+    <!-- END -->
+  </div>
+{% endblock content %}
