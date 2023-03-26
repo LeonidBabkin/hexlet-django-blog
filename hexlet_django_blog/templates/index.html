@@ -1,32 +1,7 @@
-{% extends 'base.html' %}
+{% extends 'layout.html' %}
+{% load bootstrap4 i18n %}
+{% get_current_language as LANGUAGE_CODE %}
 
-{% block navigation %}
-
-{{ who }}
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">        
-        <li class="nav-item">
-        <a class="nav-link" href="{% url 'app-views-about' %}">О блоге</a>
-        </li>
-
-        <li class="nav-item">
-        <a class="nav-link" href="{% url 'article-index-view' %}">О статье</a>
-        </li>
-            
-        <li class="nav-item">
-        <a class="nav-link" href="{% url 'app-views-articles' %}">О статьях</a>
-        </li>
-                   
-        <li class="nav-item">
-        <a class="nav-link" href="{% url 'app-views-categories' %}">О категориях</a>
-        </li>
-                       
-        <li class="nav-item">
-        <a class="nav-link" href="{% url 'details-view' %}">Уточнения</a>
-        </li>
-    </ul>
-    </div>
-</nav>
-{% endblock %}
+{% block content %}
+<h1>Мой Джанго Блог</h1>
+{% endblock content %}
