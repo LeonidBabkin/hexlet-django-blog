@@ -1,17 +1,9 @@
-{% load bootstrap4 %}
-{% load i18n %}
+{% extends 'layout.html' %}
+{% load bootstrap4 i18n %}
 {% get_current_language as LANGUAGE_CODE %}
 
-<!DOCTYPE html>
-<html lang="{{ LANGUAGE_CODE }}">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Django simple blog</title>
-    {% bootstrap_css %}
-  </head>
-  <body class="bg-light">
-    <div class="container mt-4">
-        <p class="h2">There are not the page you're looking for. Come <a href="{% url 'index' %}">Home</a>, padawan</p>
-    </div>
-    </body>
-</html>
+{% block content %}
+  <div class="container mt-4">
+    <p class="h2">There are not the page you're looking for. Come <a href="{% url 'index' %}">Home</a>, padawan</p>
+  </div>
+{% endblock content %}
