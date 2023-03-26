@@ -1,5 +1,5 @@
 from django.db import models
-import django.utils.timezone
+from django.utils import timezone
 from hexlet_django_blog.categories.models import Category
 
 
