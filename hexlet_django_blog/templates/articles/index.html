@@ -1,9 +1,17 @@
-{% extends "base.html" %}
+{% extends 'layout.html' %}
+{% load bootstrap4 i18n %}
+{% get_current_language as LANGUAGE_CODE %}
 
 {% block content %}
+  <div class="container mt-4">
     <h1>Список статей</h1>
-    {% for article in articles %}
-        <h2>{{ article.name }}</h2>
-        <div>{{ article.body|slice:":200" }}</div>
-    {% endfor %}
-{% endblock %}
+    <ul>
+      {% for article in articles %}
+      <li>
+        <h2>{{ article.title }}</h2>
+        <a href="{% url 'articles_detail' article.id %}">Читать</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endblock content %}
