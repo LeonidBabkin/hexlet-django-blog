@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+{% load bootstrap4 i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+
+{% block content %}
+<div class="container mt-4">
+  <!-- BEGIN (write your solution here) -->
+  <h1>{{ category.name }}</h1>
+  <div>{{ category.description }}</div>
+  {% if category.article_set.all %}
+  <h2>Статьи</h2>
+  <ol>
+    {% for article in category.article_set.all %}
+    <li>
+      <a href="{% url 'articles_detail' article.id %}">{{ article.title }}</a>
+    </li>
+    {% endfor %}
+  </ol>
+  {% endif %}
+{% endblock content %}
