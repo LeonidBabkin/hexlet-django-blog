@@ -1,13 +1,10 @@
-<!-- hexlet_django_blog/templates/about.html -->
-{% extends 'base.html' %}
-<div id="sidebar">
-    {% block sidebar %}
-      <a href="{% url 'index' %}">Назад к главной странице</a>
-    {% endblock %}
-</div>
+{% extends 'layout.html' %}
+{% load bootstrap4 i18n %}
+{% get_current_language as LANGUAGE_CODE %}
 
 {% block content %}
+  <div class="container mt-4">
     <h1>О блоге</h1>
     <p>Эксперименты с Django на Хекслете</p>
-    <p>{{ tags|join:', ' }}</p>
-{% endblock %}
+  </div>
+{% endblock content %}
