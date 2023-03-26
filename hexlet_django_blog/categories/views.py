@@ -12,7 +12,8 @@ class IndexView(View):
         })
 
 
-# BEGIN (write your solution here) Task 13
+# Создайте вью, которая извлекает из базы текущую запрошенную категорию и передает ее в шаблон. Task 13
+# Не забудьте подключить вью в categories/urls.py.
 class CategoryView(View):
     template_name = 'categories/category.html'
 
