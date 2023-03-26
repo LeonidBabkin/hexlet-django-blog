@@ -4,7 +4,11 @@
 
 {% block content %}
 <div class="container mt-4">
-  <!-- BEGIN (write your solution here) -->
+  
+  <!-- Выведите имя и описание категории. Выведите список названий статей категории в виде <ol> списка. 
+  Если статей в категории нет, то тег <ol> не должен отображаться. Каждое название – ссылка на саму статью. 
+  Маршрут подсмотрите в файле роутов -->
+  
   <h1>{{ category.name }}</h1>
   <div>{{ category.description }}</div>
   {% if category.article_set.all %}
