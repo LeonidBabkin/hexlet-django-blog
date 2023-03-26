@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bootstrap4',
     'hexlet_django_blog',
-    'hexlet_django_blog.article',
     'hexlet_django_blog.articles',
     'hexlet_django_blog.categories',
 ]
