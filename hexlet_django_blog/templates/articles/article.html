@@ -6,7 +6,7 @@
   <div class="container mt-4">
     <h1>{{ article.title }}</h1>
     <div>{{ article.body }}</div>
-    <!-- BEGIN (write your solution here) -->
+    <!-- Добавьте ссылку на категорию статьи рядом с ее именем -->
     <p>Категории:
       <a href="{% url 'categories_detail' article.category.id %}">
         {{ article.category }}
