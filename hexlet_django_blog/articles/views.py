@@ -21,5 +21,3 @@ class ArticleView(View):
         return render(request, self.template_name, context={
             'article': article,
         })
-
-    raise Http404()
