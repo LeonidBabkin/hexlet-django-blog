@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.urls import include, path
 from hexlet_django_blog import views
+from django.contrib import admin
+
 
 urlpatterns = [
     path('', views.index, name='index'),
