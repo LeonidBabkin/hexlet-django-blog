@@ -1,5 +1,5 @@
 from django.db import models
-from hexlet-django-blog.categories.models import Category
+from hexlet_django_blog.categories.models import Category
 
 
 # Create your models here.
