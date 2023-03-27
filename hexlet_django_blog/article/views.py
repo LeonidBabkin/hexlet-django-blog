@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .forms import CommentArticleForm, CommentForm
+from .forms import CommentArticleForm
 from django.views import View
 from hexlet_django_blog.article.models import Comment
 
@@ -21,9 +21,9 @@ class CommentArticleView(View):
             comment.save()
 
 
-class CommentFormView(View):
-
-    def post(self, request, *args, **kwargs):
-        form = CommentForm(request.POST)  # Получаем данные формы из запроса
-        if form.is_valid():  # Проверяем данных формы на корректность
-            form.save()  # Сохраняем форму
+# class CommentFormView(View):
+#
+#     def post(self, request, *args, **kwargs):
+#         form = CommentForm(request.POST)  # Получаем данные формы из запроса
+#         if form.is_valid():  # Проверяем данных формы на корректность
+#             form.save()  # Сохраняем форму
