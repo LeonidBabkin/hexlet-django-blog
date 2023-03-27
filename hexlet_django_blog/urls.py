@@ -21,6 +21,7 @@ from django.contrib import admin
 urlpatterns = [
     path('', views.index, name='index'),
     path('about/', views.about, name='about'),
+    path('article/', include('hexlet_django_blog.article.urls')),
     path('articles/', include('hexlet_django_blog.articles.urls')),
     path('categories/', include('hexlet_django_blog.categories.urls')),
     path('admin/', admin.site.urls),
