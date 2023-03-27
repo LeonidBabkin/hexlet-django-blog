@@ -13,10 +13,11 @@ from django.db.models import Q
 #             'articles': articles,
 #         })
 class IndexView(View):
-    # BEGIN (write your solution here)
+
     def get(self, request, *args, **kwargs):
-        query = request.GET.get('q', '')
-        articles = Article.objects.filter(Q(title__icontains=query))
+        query = request.GET.get('q', '')  # извлечение запроса из формы
+        articles = Article.objects.filter(Q(title__icontains=query))  # поиск в названиях статей в соответсвии с
+        # запросом
         return render(request, 'articles/index.html', context={
             'articles': articles,
             'query': query,
