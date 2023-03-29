@@ -37,7 +37,6 @@ class ArticleFormCreateView(View):
         form = ArticleForm()
         return render(request, 'articles/create.html', {'form': form})
 
-
     def post(self, request, *args, **kwargs):
         form = ArticleForm(request.POST)
         if form.is_valid():  # Если данные корректные, то сохраняем данные формы
@@ -47,3 +46,21 @@ class ArticleFormCreateView(View):
         # Если данные некоректные, то возвращем человека обратно на страницу с заполенной формой
         messages.error(request, 'Статья неверна. Попробуйте снова')
         return render(request, 'articles/create.html', {'form': form})
+
+
+class ArticleFormEditView(View):
+
+    def get(self, request, *args, **kwargs):
+        article_id = kwargs.get('id')
+        article = Article.objects.get(id=article_id)
+        form = ArticleForm(instance=article)
+        return render(request, 'articles/update.html', {'form': form, 'article_id':article_id})
+
+    def post(self, request, *args, **kwargs):
+        article_id = kwargs.get('id')
+        article = Article.objects.get(id=article_id)
+        form = ArticleForm(request.POST, instance=article)
+        if form.is_valid():
+            form.save()
+            return redirect('articles_index')
+        return render(request, 'articles/update.html', {'form': form, 'article_id': article_id})
