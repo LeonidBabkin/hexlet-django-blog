@@ -18,6 +18,10 @@
         <h2>{{ article.title }}</h2>
         <a href="{% url 'articles_detail' article.id %}">Читать</a>
         <a href="{% url 'articles_update' article.id %}">Редактировать</a>
+        <form action="{% url 'articles_destroy' article.id %}" method="post">
+        {% csrf_token %}
+        <input class="btn btn-danger" type="submit" value="Удалить">
+        </form>
       </li>
       {% endfor %}
     </ul>
