@@ -38,3 +38,30 @@ class CategoryFormCreateView(View):
             return redirect('categories_index')
 
         return render(request, 'categories/create.html', {'form': form})
+
+
+class CategoryUpdateView(View):
+
+    def get(self, request, *args, **kwargs):
+        category_id = kwargs.get('id')
+        category = Category.objects.get(id=category_id)
+        form = CategoryForm(instance=category)
+        return render(request, 'categories/update.html', {
+            'form': form,
+            'category_id': category_id
+            }
+        )
+
+    def post(self, request, *args, **kwargs):
+        category_id = kwargs.get('id')
+        category = Category.objects.get(id=category_id)
+        form = CategoryForm(request.POST, instance=category)
+        if form.is_valid():
+            form.save()
+            return redirect('categories_index')
+
+        return render(request, 'categories/update.html', {
+            'form': form,
+            'category_id': category_id
+            }
+        )

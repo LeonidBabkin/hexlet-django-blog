@@ -10,6 +10,7 @@
     <h1>Список категорий статей</h1>
     {% for category in categories %}
       <h2><a class="link" href="{% url 'categories_detail' category.id %}">
+        <a href="{% url 'categories_update' category.id %}">Редактировать</a>
         {{ category.name }}
       </a>
       <h2>
