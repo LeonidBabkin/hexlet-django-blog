@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     'hexlet_django_blog',
     'hexlet_django_blog.articles',
     'hexlet_django_blog.categories',
-    'hexlet_django_blog.article',
 ]
 
 MIDDLEWARE = [

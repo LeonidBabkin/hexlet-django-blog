@@ -4,14 +4,15 @@
 
 {% block content %}
   <div class="container mt-4">
-  <h1>Список категорий статей</h1>
-    {% for category in categories %}
-    <!-- Добавьте ссылку на страницу категории рядом с именем каждой категории -->
-      <h2><a class="link" href="{% url 'categories_detail' category.id %}">
-          {{ category.name }}
-        </a>
-      </h2>
+    <!-- BEGIN (write your solution here) -->
+    <small><a href="{% url 'category_create' %}">Создать категорию</a></small>
     <!-- END -->
+    <h1>Список категорий статей</h1>
+    {% for category in categories %}
+      <h2><a class="link" href="{% url 'categories_detail' category.id %}">
+        {{ category.name }}
+      </a>
+      <h2>
       <div>{{ category.description }}</div>
     {% endfor %}
   </div>

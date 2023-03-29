@@ -1,6 +1,7 @@
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, render, redirect
 from django.views import View
 from hexlet_django_blog.categories.models import Category
+from hexlet_django_blog.categories.forms import CategoryForm
 
 
 class IndexView(View):
@@ -22,4 +23,18 @@ class CategoryView(View):
         return render(request, self.template_name, context={
             'category': category,
         })
-# END
+
+
+class CategoryFormCreateView(View):
+
+    def get(self, request, *args, **kwargs):
+        form = CategoryForm()
+        return render(request, 'categories/create.html', {'form': form})
+
+    def post(self, request, *args, **kwargs):
+        form = CategoryForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('categories_index')
+
+        return render(request, 'categories/create.html', {'form': form})
