@@ -2,6 +2,8 @@
 {% load bootstrap4 i18n %}
 {% get_current_language as LANGUAGE_CODE %}
 
+<!-- отображение ошибок -->
+
 {% block content %}
   <div class="container mt-4">
     {% if form.subject.errors %}
@@ -13,11 +15,16 @@
       </ul>
     </div>
     {% endif %}
+  </div>
+
+<!-- форма для изменения статьи -->
+
 <form action="{% url 'articles_update' id=article_id %}" method="post">
     {% csrf_token %}
     <table border="1">
-    {{ form }}
+    {{ form }}  # modelForm passed on from the views
     </table>
     <input type="submit" value="Сохранить">
 </form>
+
 {% endblock %}
