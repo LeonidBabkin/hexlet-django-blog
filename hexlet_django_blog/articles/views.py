@@ -9,7 +9,6 @@ from django.contrib import messages
 # пустую строку "". А пустую строку содержит любая строка поэтому фильтр
 # возвращает из БД все.
 class IndexView(View):
-
     def get(self, request, *args, **kwargs):
         query = request.GET.get('q', '')  # извлечение запроса из формы: "Get the value of a GET variable with name
         # 'q', and if it doesn't exist, return ''.
