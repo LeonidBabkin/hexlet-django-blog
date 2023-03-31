@@ -1,1 +1,2 @@
-# hexlet-django-blog
+- simple-django-blog
+- an example of django app architecture
