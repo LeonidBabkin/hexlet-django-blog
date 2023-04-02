@@ -11,7 +11,7 @@
   <h1>Список категорий статей</h1>
   {% for category in categories %}
     
-<!--     ссылка на определённую категорию через параметр id  -->
+<!--     ссылка на определённую категорию через определитель id  -->
     
     <h2><a class="link" href="{% url 'categories_detail' category.id %}">
       {{ category.name }}</a>
