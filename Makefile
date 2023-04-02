@@ -8,13 +8,11 @@ migrate:
 shell:
 	poetry run python3 manage.py shell	
 shellplus:
-           poetry run python3 manage.py shell_plus	   
+	poetry run python3 manage.py shell_plus	   
 validatetemplates:
-                   poetry run python3 manage.py validate_templates
-graphmodels:
-             poetry run python3 manage.py graph_models
+	poetry run python3 manage.py validate_templates
 showurls:
-          poetry run python3 manage.py show_urls
+	poetry run python3 manage.py show_urls
 
-PHONY: start, lint, migrate, shell, shellplus, validatetemplates, graphmodels, showurls
+PHONY: start, lint, migrate, shell, shellplus, validatetemplates, showurls
 
