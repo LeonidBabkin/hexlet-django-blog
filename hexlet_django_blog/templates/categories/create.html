@@ -3,6 +3,7 @@
 {% get_current_language as LANGUAGE_CODE %}
 
 {% block content %}
+<!-- показ ошибок при их наличии -->
 {% if form.subject.errors %}
   <div>
     <ul>
@@ -12,6 +13,7 @@
     </ul>
   </div>
   {% endif %}
+<!-- форма создания категории -->
   <form action="{% url 'category_create' %}" method="post">
     {% csrf_token %}
     <table border="1">

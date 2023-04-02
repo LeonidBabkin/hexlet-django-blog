@@ -5,7 +5,6 @@ from hexlet_django_blog.categories.forms import CategoryForm
 
 
 class IndexView(View):
-
     def get(self, request, *args, **kwargs):
         categories = Category.objects.all()
         return render(request, 'categories/index.html', context={
@@ -36,7 +35,7 @@ class CategoryFormCreateView(View):
         if form.is_valid():
             form.save()
             return redirect('categories_index')
-
+        
         return render(request, 'categories/create.html', {'form': form})
 
 

@@ -4,16 +4,23 @@
 
 {% block content %}
   <div class="container mt-4">
+    
+<!--   ссылка на страницу создания категории -->
+    
     <small><a href="{% url 'category_create' %}">Создать категорию</a></small>
   <h1>Список категорий статей</h1>
   {% for category in categories %}
+    
+<!--     ссылка на определённую категорию через определитель id  -->
+    
     <h2><a class="link" href="{% url 'categories_detail' category.id %}">
       {{ category.name }}</a>
     </h2>
     <div>{{ category.description }}</div>
-    <!-- BEGIN (write your solution here) -->
+    
+<!-- ссылка на изменение категории -->
+    
     <a href="{% url 'category_update' category.id %}">Редактировать</a>
-    <!-- END -->
   {% endfor %}
   </div>
 {% endblock content %}
