@@ -8,7 +8,7 @@ migrate:
 shell:
 	poetry run python3 manage.py shell	
 shellplus:
-	poetry run python3 manage.py shell_plus	   
+	poetry run python3 manage.py shell_plus --ipython
 validatetemplates:
 	poetry run python3 manage.py validate_templates
 showurls:
