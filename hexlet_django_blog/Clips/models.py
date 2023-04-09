@@ -16,11 +16,8 @@ class Clip(models.Model):
         Returns a tuple of integers (likes, dislikes)
         for the clip(s) filtered by provided kwargs.
         """
-#       solution
 # отбираем видеоролик(Clip) согласно именованным аргументам(kwargs), аннотируем его посредством подсчета likes & dislikes
-#         likeclips = cls.objects.filter(**kwargs).annotate(num_cliplike=Count("cliplike", distinct=True))
-#         dislikeclips = cls.objects.filter(**kwargs).annotate(num_clipdislike=Count("clipdislike", distinct=True))
-#         return likeclips[0].num_cliplike, dislikeclips[0].num_clipdislike
+
         likeclips = cls.objects.filter(
             **kwargs).annotate(num_cliplike=Count(
                 "cliplike", distinct=True))
@@ -29,22 +26,6 @@ class Clip(models.Model):
                 "clipdislike", distinct=True))
         return likeclips[0].num_cliplike, dislikeclips[0].num_clipdislike
 
-
-
-        # aggregate = cls.objects.filter(
-        #     **kwargs,
-        # ).annotate(
-        #     likes=models.Count('cliplike', distinct=True),
-        #     dislikes=models.Count('clipdislike', distinct=True),
-        # ).aggregate(
-        #     models.Sum('likes'),
-        #     models.Sum('dislikes'),
-        # )
-        # return (aggregate['likes__sum'], aggregate['dislikes__sum'])
-
-# Обычно используют одну модель как для положительных реакций, так и для отрицательных. Однако в рамках этого упражнения
-# две отдельные модели использовать удобнее. В реальных проектах такое тоже встречается, когда некое явление пользователю
-# позволено оценить одновременно и положительно, и отрицательно.
 
 class ClipLike(models.Model):
     clip = models.ForeignKey(Clip, on_delete=models.CASCADE)
