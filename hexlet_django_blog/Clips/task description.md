@@ -5,8 +5,13 @@
 метод принимает **kwargs, которые и нужно использовать при отборе клипов для анализа.
 
 clip = models.Clip.objects.create(title='Foo')
+
 clip.like()
+
 clip.dislike()
+
 clip.like()
+
 Clip.rates_for(title='Foo')  # (2, 1)
+
 Clip.rates_for(id=clip.id)  # (2, 1)
