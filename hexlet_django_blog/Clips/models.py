@@ -28,6 +28,7 @@ class Clip(models.Model):
 #             return tuple([likeclips[0].num_cliplike, dislikeclips[0].num_clipdislike])
            
 #       second solution
+#       отбираем видеоролик(Clip) согласно именованным аргументам(kwargs), аннотируем его посредством подсчета likes & dislikes
         likeclips = cls.objects.filter(**kwargs).annotate(num_cliplike=Count("cliplike", distinct=True))
         dislikeclips = cls.objects.filter(**kwargs).annotate(num_clipdislike=Count("clipdislike", distinct=True))
         return likeclips[0].num_cliplike, dislikeclips[0].num_clipdislike
