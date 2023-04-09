@@ -16,22 +16,20 @@ class Clip(models.Model):
         Returns a tuple of integers (likes, dislikes)
         for the clip(s) filtered by provided kwargs.
         """
-#         first solution
-#         key = list(kwargs)
-#         if isinstance(kwargs[key[0]], int):
-#             likeclips = cls.objects.filter(id=kwargs[key[0]]).annotate(num_cliplike=Count("cliplike", distinct=True))
-#             dislikeclips = cls.objects.filter(id=kwargs[key[0]]).annotate(num_clipdislike=Count("clipdislike", distinct=True))
-#             return tuple([likeclips[0].num_cliplike, dislikeclips[0].num_clipdislike])
-#         else:
-#             likeclips = cls.objects.filter(title=kwargs[key[0]]).annotate(num_cliplike=Count("cliplike", distinct=True))
-#             dislikeclips = cls.objects.filter(title=kwargs[key[0]]).annotate(num_clipdislike=Count("clipdislike", distinct=True))
-#             return tuple([likeclips[0].num_cliplike, dislikeclips[0].num_clipdislike])
-           
-#       second solution
+#       solution
 # отбираем видеоролик(Clip) согласно именованным аргументам(kwargs), аннотируем его посредством подсчета likes & dislikes
-        likeclips = cls.objects.filter(**kwargs).annotate(num_cliplike=Count("cliplike", distinct=True))
-        dislikeclips = cls.objects.filter(**kwargs).annotate(num_clipdislike=Count("clipdislike", distinct=True))
+#         likeclips = cls.objects.filter(**kwargs).annotate(num_cliplike=Count("cliplike", distinct=True))
+#         dislikeclips = cls.objects.filter(**kwargs).annotate(num_clipdislike=Count("clipdislike", distinct=True))
+#         return likeclips[0].num_cliplike, dislikeclips[0].num_clipdislike
+        likeclips = cls.objects.filter(
+            **kwargs).annotate(num_cliplike=Count(
+                "cliplike", distinct=True))
+        dislikeclips = cls.objects.filter(
+            **kwargs).annotate(num_clipdislike=Count(
+                "clipdislike", distinct=True))
         return likeclips[0].num_cliplike, dislikeclips[0].num_clipdislike
+
+
 
         # aggregate = cls.objects.filter(
         #     **kwargs,
