@@ -26,6 +26,11 @@ class Clip(models.Model):
 #             likeclips = cls.objects.filter(title=kwargs[key[0]]).annotate(num_cliplike=Count("cliplike", distinct=True))
 #             dislikeclips = cls.objects.filter(title=kwargs[key[0]]).annotate(num_clipdislike=Count("clipdislike", distinct=True))
 #             return tuple([likeclips[0].num_cliplike, dislikeclips[0].num_clipdislike])
+           
+#           second solution
+#           likeclips = cls.objects.filter(**kwargs).annotate(num_cliplike=Count("cliplike", distinct=True))
+#           dislikeclips = cls.objects.filter(**kwargs).annotate(num_clipdislike=Count("clipdislike", distinct=True))
+#           return tuple([likeclips[0].num_cliplike, dislikeclips[0].num_clipdislike])
 
 
 # Обычно используют одну модель как для положительных реакций, так и для отрицательных. Однако в рамках этого упражнения
