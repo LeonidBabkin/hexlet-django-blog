@@ -33,11 +33,14 @@ class Clip(models.Model):
 #          return tuple([likeclips[0].num_cliplike, dislikeclips[0].num_clipdislike])
 
            aggregate = cls.objects.filter(
-                   **kwargs,
-
-                   ).annotate(likes=models.Count('cliplike', distinct=True),
-                              dislikes=models.Count('clipdislike', distinct=True),
-                              ).aggregate(models.Sum('likes'), models.Sum('dislikes'))
+               **kwargs,
+           ).annotate(
+               likes=models.Count('cliplike', distinct=True),
+               dislikes=models.Count('clipdislike', distinct=True),
+           ).aggregate(
+               models.Sum('likes'),
+               models.Sum('dislikes'),
+           )
            return (aggregate['likes__sum'], aggregate['dislikes__sum'])
 
 # Обычно используют одну модель как для положительных реакций, так и для отрицательных. Однако в рамках этого упражнения
