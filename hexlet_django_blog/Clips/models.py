@@ -4,10 +4,13 @@ from django.db.models import Avg, Max, Min, Count
 class Clip(models.Model):
     title = models.CharField(max_length=200)
 
-    def like(self):  # экземпляр класса добавляется в таблицу "нравится" ClipLike
+    def like(self):
+        # на основе экземпляра класса Clip создаётся новая запись в таблице класса Cliplike/ClipDislike
+        # в таблицу заносятся титул и id экземпляра класса 
+        # на основе титула и id в последствии можно делать выборку 
         ClipLike.objects.create(clip=self)
 
-    def dislike(self):  # экземпляр класса добавляется в таблицу "не нравится" ClipDislike
+    def dislike(self):
         ClipDislike.objects.create(clip=self)
 
     @classmethod
@@ -16,7 +19,8 @@ class Clip(models.Model):
         Returns a tuple of integers (likes, dislikes)
         for the clip(s) filtered by provided kwargs.
         """
-# отбираем видеоролик(Clip) согласно именованным аргументам(kwargs), аннотируем его посредством подсчета likes & dislikes
+# в cls (классе Clip) содержаться все его экземпляры класса. Мы ищем этот экземпляр через фильтр и аннотируем его 
+# по количеству случаев он был добавлен в таблицу Cliplike или ClipDislike
 
         likeclips = cls.objects.filter(
             **kwargs).annotate(num_cliplike=Count(
@@ -31,5 +35,5 @@ class ClipLike(models.Model):
     clip = models.ForeignKey(Clip, on_delete=models.CASCADE)
 
 
-class ClipDislike(models.Model):
+class ClipDislike(models.Model):  # на основе экземпляра класса Clip создаётся новая запись в таблице класса Cliplike/ClipDislike
     clip = models.ForeignKey(Clip, on_delete=models.CASCADE)
