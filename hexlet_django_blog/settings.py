@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'hexlet_django_blog.categories',
     'hexlet_django_blog.islands',
     'hexlet_django_blog.Clips',
+    'hexlet_django_blog.projects',
     'django_extensions',
 ]
 
